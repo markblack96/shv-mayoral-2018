@@ -1,7 +1,6 @@
 var width = 720;
 var height = 640;
 
-<<<<<<< HEAD
 var candidates = {
     1: 'Adrian Perkins',
     2: 'Ollie Tyler',
@@ -9,8 +8,6 @@ var candidates = {
     4: 'Lee Savage'
 }
 
-=======
->>>>>>> f0f5db44ba85a856b45865a7273fbb8340d41edb
 var svg = d3.select("#svg-container")
             .append("svg")
             .attr("width", width)
@@ -18,13 +15,10 @@ var svg = d3.select("#svg-container")
 
 var g = svg.append("g");
 
-<<<<<<< HEAD
 var color = d3.scaleQuantile()
             .range(["#193ABE", "#80a0ff", "#FF0010", "#FF8080"])
             .domain([1,4]);
 
-=======
->>>>>>> f0f5db44ba85a856b45865a7273fbb8340d41edb
 var albersProjection = d3.geoAlbers()
     .scale(105000)
     .rotate([93.750,0])
@@ -40,11 +34,8 @@ g.selectAll("path")
     .append("path")
     .attr("fill", "#ccc")
     .attr( "stroke", "#333")
-<<<<<<< HEAD
     .attr("d", geoPath)
     .style("fill", function(d) {
         return color(d.properties.Winner)
     });
-=======
->>>>>>> f0f5db44ba85a856b45865a7273fbb8340d41edb
     .attr("d", geoPath);
