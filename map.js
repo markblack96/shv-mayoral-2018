@@ -37,5 +37,5 @@ g.selectAll("path")
     .attr("d", geoPath)
     .style("fill", function(d) {
         return color(d.properties.Winner)
-    });
+    })
     .attr("d", geoPath);
