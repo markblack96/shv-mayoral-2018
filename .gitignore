@@ -1,0 +1,14 @@
+*.shp
+*.ods
+*.dbf
+<<<<<<< HEAD
+*.DBF
+*.qpj
+*.qgs
+*.prj
+*.shx
+=======
+>>>>>>> f0f5db44ba85a856b45865a7273fbb8340d41edb
+*.qpj
+*.qgs
+*.prj
