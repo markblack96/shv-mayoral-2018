@@ -8,7 +8,7 @@ var candidates = {
     4: 'Lee Savage'
 }
 
-var svg = d3.select("#svg-container")
+var svg = d3.select("#round-one-container")
             .append("svg")
             .attr("width", width)
             .attr("height", height);
@@ -30,6 +30,27 @@ var geoPath = d3.geoPath()
 
 g.selectAll("path")
     .data(map_data.features) // have to make sure *.json is formatted right
+    .enter()
+    .append("path")
+    .attr("fill", "#ccc")
+    .attr( "stroke", "#333")
+    .attr("d", geoPath)
+    .style("fill", function(d) {
+        return color(d.properties.Winner)
+    })
+    .attr("d", geoPath);
+
+// Round two:
+var svg = d3.select("#round-two-container")
+			.append("svg")
+			.attr("width", width)
+			.attr("height", height);
+			
+var g = svg.append("g");
+
+
+g.selectAll("path")
+    .data(round2.features) // have to make sure *.json is formatted right
     .enter()
     .append("path")
     .attr("fill", "#ccc")
