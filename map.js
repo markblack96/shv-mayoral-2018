@@ -1,5 +1,5 @@
-var width = 720;
-var height = 640;
+var width = 640;
+var height = 720;
 
 var candidates = {
     1: 'Adrian Perkins',
@@ -20,7 +20,7 @@ var color = d3.scaleQuantile()
             .domain([1,4]);
 
 var albersProjection = d3.geoAlbers()
-    .scale(105000)
+    .scale(100000)
     .rotate([93.750,0])
     .center([0,32.450])
     .translate([width/2, height/2]);
@@ -28,8 +28,9 @@ var albersProjection = d3.geoAlbers()
 var geoPath = d3.geoPath()
     .projection(albersProjection);
 
+// Round one
 g.selectAll("path")
-    .data(map_data.features) // have to make sure *.json is formatted right
+    .data(round1.features) // have to make sure *.json is formatted right
     .enter()
     .append("path")
     .attr("fill", "#ccc")

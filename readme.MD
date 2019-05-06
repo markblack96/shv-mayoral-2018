@@ -13,9 +13,10 @@ The precincts that required merging were precincts 00 005A and 00 005B; 00 090A 
 #### 2. Converting data to appropriate forms
 
 Because we want to display the data with d3.js, the data must be converted into a form that can be read by the library. One form d3.js can take is GeoJSON data. The conversion process for this is simple enough. We simply navigate to the directory containing the .shp file to be converted and run ogr2ogr.
-
-ogr2ogr filename.shp converted_file.json
-
+```
+ogr2ogr -f geoJSON converted_file.json filename.shp
+```
+As long as the resulting json files are referenced in the html file, they are then accessible to our d3 script.
 #### 3. Displaying a Choropleth map with d3.js
 
 Now that we have our data, we can pass it into a javascript file and use d3.js to display it.
